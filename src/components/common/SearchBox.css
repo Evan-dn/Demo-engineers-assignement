@@ -1,0 +1,37 @@
+.searchbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchbox-container input {
+  border-radius: 32px;
+  padding: 8px 24px;
+  border: 1px solid transparent; /* Set initial border to transparent */
+  flex-grow: 1;
+  outline: none;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+.searchbox-container input:focus {
+  box-shadow: 0 3px 5px var(--color-primary);
+}
+
+.searchbox-icon, .searchbox-clear-icon {
+  color: black;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.searchbox-icon {
+  left: 5px;
+}
+
+.searchbox-clear-icon {
+  right: 5px;
+}
