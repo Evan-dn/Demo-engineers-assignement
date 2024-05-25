@@ -1,0 +1,37 @@
+.custom-hits-container {
+  padding: 16px;
+  justify-items: center;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-auto-rows: 400px;
+}
+
+.custom-hits-layout {
+  flex: 1;
+}
+
+.custom-hits-no-result {
+  padding: 16px;
+  font-weight: bold;
+}
+
+.scroll-to-top-container {
+  z-index: 100000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  --custom-btn-glow-color: var(--color-primary);
+}
+
+.scroll-to-top-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .custom-hits-container {
+    margin-top: 48px;
+  }
+}
