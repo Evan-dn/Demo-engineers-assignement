@@ -1,9 +1,12 @@
-import {  useState } from 'react'
+import { useState } from 'react'
 import PropTypes from 'prop-types'
-
-import './CustomHit.css'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+
+import useLanguage from '@/hooks/useLanguage'
+import { getPokemonName } from '@/utils/pokemon'
+
+import './CustomHit.css'
 
 const CustomHit = ({ hit }) => {
   const [style, setStyle] = useState({})
@@ -45,7 +48,10 @@ const CustomHit = ({ hit }) => {
     setStyle({})
   }
 
-  const pokemonName = hit?._highlightResult?.name?.english?.value
+  const { selectedLanguage } = useLanguage()
+
+  // no need to use useMemo, no complex computing and return a primitive type
+  const pokemonName = getPokemonName({ selectedLanguage, namePath: hit?._highlightResult?.name })
 
   return (
     <div

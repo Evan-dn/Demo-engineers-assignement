@@ -1,4 +1,6 @@
 import CustomSearchBox from '@/components/topbar/CustomSearchBox'
+import SelectLanguage from '@/components/topbar/SelectLanguage'
+
 import './index.css'
 
 const TopBar = () => {
@@ -6,6 +8,7 @@ const TopBar = () => {
     <div className='topbar-container'>
       <div className='topbar-content'>
         <CustomSearchBox />
+        <SelectLanguage/>
       </div>
     </div>
   )

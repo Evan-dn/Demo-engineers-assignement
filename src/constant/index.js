@@ -16,7 +16,31 @@ const FACET_ATTRIBUTES = [
   }
 ]
 
+const LANGUAGE_OPTIONS = [
+  {
+    id: 'english',
+    name:  'English'
+  },
+  {
+    id: 'japanese',
+    name: 'Japanese'
+  },
+  {
+    id: 'french',
+    name: 'French'
+  },
+  {
+    id: 'chinese',
+    name: 'Chinese'
+  }
+]
+
+// context actions
+const SET_LANGUAGE = 'SET_LANGUAGE'
+
 export {
   ALGOLIA_INDEX,
-  FACET_ATTRIBUTES
+  FACET_ATTRIBUTES,
+  LANGUAGE_OPTIONS,
+  SET_LANGUAGE
 }

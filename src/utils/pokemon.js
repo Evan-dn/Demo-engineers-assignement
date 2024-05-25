@@ -1,0 +1,1 @@
+export const getPokemonName = ({ selectedLanguage, namePath }) => namePath[selectedLanguage?.id]?.value
