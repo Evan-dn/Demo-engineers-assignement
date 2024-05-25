@@ -1,0 +1,22 @@
+.custom-range-slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.custom-range-slider-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.custom-range-slider{
+  background-color: white !important;
+}
+
+.custom-range-slider > .range-slider__thumb {
+  background: var(--color-secondary)!important;
+}
+
+.custom-range-slider > .range-slider__range {
+  background:var(--color-primary-variant) !important;
+}

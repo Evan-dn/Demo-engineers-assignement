@@ -1,0 +1,106 @@
+.refinement-list-container {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  margin-bottom: 24px;
+  ul {
+    padding: 0;
+    margin: 12px 0 24px 0;
+  }
+}
+
+.refinement-list-li-container {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+
+}
+
+.refinement-list-checkbox {
+  margin-right: 8px;
+  width: 21px;
+  border-radius: 7px;
+  --active: var(--color-primary-variant);
+  --active-inner: #fff;
+  --focus: 2px rgba(39, 94, 254, .3);
+  --border: #BBC1E1;
+  --border-hover: #275EFE;
+  --background: #fff;
+  --disabled: #F6F8FF;
+  --disabled-inner: #E1E6F9;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 21px;
+  outline: none;
+  vertical-align: top;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid var(--bc, var(--border));
+  background: var(--b, var(--background));
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+
+.refinement-list-checkbox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  transform: scale(0) translate(-50%, -50%);
+  transition: transform 0.3s;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.refinement-list-checkbox:checked {
+  --bc: var(--active);
+  --b: var(--active);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.refinement-list-checkbox:checked::before {
+  transform: scale(1) translate(-50%, -50%);
+}
+
+.refinement-list-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 10px;
+  border: solid var(--active-inner);
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.refinement-list-label {
+  cursor: pointer;
+  color: white;
+}
+.refinement-list-count {
+  cursor: pointer;
+  margin-left: 4px;
+  padding: 2px;
+  border-radius: 50%;
+  align-self: flex-end;
+  font-size: 12px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+@media only screen and (max-width: 600px) {
+  .refinement-list-container {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+  }
+}
