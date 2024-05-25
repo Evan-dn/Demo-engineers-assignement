@@ -7,7 +7,7 @@ import { UiProvider } from '@/context/ui'
 import Modal from '@/components/modal'
 import TopBar from '@/components/topbar'
 import CustomRefinementLists from '@/components/customRefinementLists'
-import CustomHits from '@/components/customhits'
+import CustomHits from '@/components/customHits'
 
 import './App.css'
 

@@ -2,7 +2,7 @@ import { useInfiniteHits } from 'react-instantsearch'
 import { useInView } from "react-intersection-observer"
 import { FaArrowUp } from "react-icons/fa"
 
-import CustomHit from '@/components/customhits/CustomHit'
+import CustomHit from '@/components/customHits/CustomHit'
 import NoResult from '@/components/common/NoResult'
 import Button from '@/components/common/Button'
 

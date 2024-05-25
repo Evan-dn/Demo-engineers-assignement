@@ -18,7 +18,6 @@ const CustomHit = ({ hit }) => {
   const handleMouseMove = (e) => {
     let pos = [e.nativeEvent.offsetX, e.nativeEvent.offsetY]
     if (e.type === "touchmove") {
-      console.log('vldjfnv ldfv ndlfkv ndlfnv:::::')
       pos = [e.touches[0].clientX, e.touches[0].clientY]
     }
     const l = pos[0]
