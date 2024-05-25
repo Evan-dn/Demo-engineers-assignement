@@ -4,6 +4,8 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import useLanguage from '@/hooks/useLanguage'
+import useModal from '@/hooks/useModal'
+import { POKEMON_DETAIL_MODAL } from '@/constant'
 import { getPokemonName } from '@/utils/pokemon'
 
 import './CustomHit.css'
@@ -50,11 +52,17 @@ const CustomHit = ({ hit }) => {
 
   const { selectedLanguage } = useLanguage()
 
+  const { openModal } = useModal({
+    name: POKEMON_DETAIL_MODAL,
+    modalData: { ...hit, selectedLanguage }
+  })
+
   // no need to use useMemo, no complex computing and return a primitive type
-  const pokemonName = getPokemonName({ selectedLanguage, namePath: hit?._highlightResult?.name })
+  const pokemonName = getPokemonName({ selectedLanguage, namePath: hit?._highlightResult?.name, isHighLighted: true })
 
   return (
     <div
+      onClick={openModal}
       className={`custom-hit-container ${isHovered ? 'animated' : ''}`}
       onMouseMove={handleMouseMove}
       onMouseOut={handleMouseOut}

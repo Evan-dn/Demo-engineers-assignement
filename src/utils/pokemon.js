@@ -1,1 +1,3 @@
-export const getPokemonName = ({ selectedLanguage, namePath }) => namePath[selectedLanguage?.id]?.value
+export const getPokemonName = ({ selectedLanguage, namePath, isHighLighted = false }) => {
+  return isHighLighted ? namePath[selectedLanguage?.id]?.value : namePath[selectedLanguage?.id]
+}

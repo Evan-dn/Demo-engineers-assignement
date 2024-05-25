@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from "react"
 
 import useLanguage from "@/hooks/useLanguage"
+import useOutsideClickListener from "@/hooks/useOutsideClickListener"
+
 import { LANGUAGE_OPTIONS } from "@/constant"
 
 import './SelectLanguage.css'
@@ -12,6 +14,8 @@ const SelectLanguage = () => {
   const [defaultSelectText, setDefaultSelectText] = useState(selectedLanguage?.name)
   const [showOptionList, setShowOptionList] = useState(false)
   
+  useOutsideClickListener(selectRef, () => setShowOptionList(false))
+
   useEffect(() => {
     setDefaultSelectText(selectedLanguage?.name)
   }, [selectedLanguage])

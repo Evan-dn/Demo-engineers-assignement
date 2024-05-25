@@ -1,0 +1,1 @@
+export const getOpenModal = (state) =>  Object.values(state.modals).find(modal => modal.open) || {}

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { createContext, useContext, useReducer } from 'react'
 
-import { SET_LANGUAGE, LANGUAGE_OPTIONS } from '@/constant'
+import { SET_LANGUAGE, SET_MODAL, LANGUAGE_OPTIONS } from '@/constant'
 
 const UiStateContext = createContext()
 const UiDispatchContext = createContext()
@@ -17,6 +17,17 @@ const reducer = (state, action) => {
       return {
         ...state,
         selectedLanguage: action.payload.selectedLanguage,
+      }
+    }
+    case SET_MODAL: {
+      const { name, open, data } = action.payload
+      return {
+        ...state,
+        modals: {
+          ...state.modals,
+          [name]: { name, open, data }
+        }
+
       }
     }
     default:
@@ -35,7 +46,7 @@ const UiProvider = ({ children }) => {
 }
 
 UiProvider.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.arrayOf(PropTypes.element)
 }
 
 const UiState = () => {
