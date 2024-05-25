@@ -10,45 +10,41 @@ import Button from '@/components/common/Button'
 import './PokemonDetailModal.css'
 
 const PokemonDetailModal = React.forwardRef(({ closeModal, fadeIn, selectedLanguage, ...pokemonDetail }, ref) => {
-  const { base = {}, type, imageUrl, name = {} } = pokemonDetail
+  
+  const { base = {}, type: types, imageUrl, name = {} } = pokemonDetail
   const isLastElement = (index, elements) => index === elements?.length - 1
   const pokemonName = getPokemonName({ selectedLanguage, namePath: name })
 
   return (
     <div data-isfadein={+fadeIn} key={ref} className="modal-overlay">
       <div ref={ref} className="modal-content">
+
         <Button className='modal-close-button' onClick={closeModal}> <GrClose /></Button>
-        <h3>{pokemonName}</h3>
 
-        <div className='pokemonDetailContainer'>
-
-          <div className='pokemon-detail'>
-            <h4>base : </h4>
-            <div>
-              <span>Hp : {base.HP}</span> /
-              <span>Attack :  {base.Attack} /
-              </span>
-              <span>Defense : {base.Defense}</span> /
-              <span>Speed : {base.Speed}</span>
-            </div>
+        <div className='pokemon-detail-content-info'>
+          <h3>{pokemonName}</h3>
+          <div className='pokemon-detail-content-info-types'>
+            Type :
+            {types.map((type, index) => (
+              <div key={index}>{type} {!isLastElement(index, types) && '/ '}</div>
+            ))}
           </div>
+        </div>
 
-
-          <div className='pokemon-detail'>
-            <h4>type : </h4>
-            <div>
-              {type.map((type, index) => (
-                <span key={index}>{type} {!isLastElement(index, type) && '/ '}</span>
-              ))}
-            </div>
+        <div className='pokemon-detail-content'>
+          <div className='pokemon-detail-content-left'>
+            <h4>Stats</h4>
+            <h4>Hp : {base.HP}</h4>
+            <h4>Attack :  {base.Attack}
+            </h4>
+            <h4>Defense : {base.Defense}</h4>
+            <h4>Speed : {base.Speed}</h4>
           </div>
-
           <LazyLoadImage
             wrapperClassName='wrapper-modal-img'
             effect='blur'
             src={imageUrl}
           />
-
         </div>
       </div>
     </div>

@@ -13,10 +13,15 @@
   background-color: white !important;
 }
 
-.custom-range-slider > .range-slider__thumb {
-  background: var(--color-secondary)!important;
+.custom-range-slider  {
+  .range-slider__thumb {
+    background: var(--color-secondary)!important;
+  }
 }
 
-.custom-range-slider > .range-slider__range {
-  background:var(--color-primary-variant) !important;
+.custom-range-slider  {
+  .range-slider__range {
+    background:var(--color-primary-variant) !important;
+  }
+  
 }
