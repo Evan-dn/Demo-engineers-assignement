@@ -5,17 +5,17 @@
   --color-secondary: #03DAC6;
   --color-background: #121212;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, var(--background), var(--color-primary-variant));
+  background: linear-gradient(to bottom right, var(--color-background), var(--color-primary-variant));
 }
 
-.container {
+.app-container {
   max-width: 1280px;
   margin: auto;
   padding-bottom: 24px;
   min-height: calc(100vh - 84px);
 }
 
-.content {
+.app-content {
   display: flex;
 }
 

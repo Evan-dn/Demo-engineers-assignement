@@ -1,0 +1,31 @@
+.custom-button {
+  cursor: pointer;
+  border-radius: 32px;
+  --glow-color: var(--custom-btn-glow-color, var(--color-secondary));
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: var(--custom-btn-color , var(--color-primary-variant));
+  border: .25em solid var(--glow-color);
+  padding: 12px 8px;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color), inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+}
+.custom-button:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color), 0 0 4em 2em var(--glow-spread-color), inset 0 0 .75em .25em var(--glow-color);
+}
+
+.custom-button:disabled,
+.custom-button[disabled]{
+  pointer-events: none;
+  cursor: auto;
+}
+

@@ -4,6 +4,7 @@ import algoliaClient from '@/services/algolia'
 import { ALGOLIA_INDEX } from '@/constant'
 
 import TopBar from '@/components/topbar'
+import CustomHits from '@/components/customhits'
 
 import './App.css'
 
@@ -15,8 +16,12 @@ function App() {
         <Configure hitsPerPage={12} />
         <TopBar />
 
+        <div className='app-container'>
+          <div className='app-content'>
+            <CustomHits />
+          </div>
+        </div>
       </InstantSearch>
-
     </>
   )
 }
