@@ -1,9 +1,15 @@
 import fs from 'fs'
+import dotenv from 'dotenv'
+
 import { ALGOLIA_INDEX } from '../src/constant/index.js'
 import algoliasearch from 'algoliasearch'
-import config from '../src/config/index.js'
 
-const client = algoliasearch(config.appId, config.apiKey)
+dotenv.config()
+
+const appId = process.env.VITE_APP_ID
+const apiKey = process.env.VITE_API_KEY
+
+const client = algoliasearch(appId,apiKey)
 const index = client.initIndex(ALGOLIA_INDEX)
 
 const withChunk = async ({ objects, chunkSize = 20, method, settings = {} }) => {
