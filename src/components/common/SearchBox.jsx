@@ -1,5 +1,5 @@
 import { FaSearch } from "react-icons/fa"
-import { MdOutlineClear } from "react-icons/md"
+import { GrClose } from "react-icons/gr"
 import PropTypes from 'prop-types'
 
 import './SearchBox.css'
@@ -7,9 +7,7 @@ import './SearchBox.css'
 const Searchbox = ({ className = '', query, onChange }) => {
   return (
     <form className={`${className} searchbox-container`} noValidate action="" role="search">
-      <div className="searchbox-icon">
-        <FaSearch />
-      </div>
+        <FaSearch className='searchbox-icon'/>
       <input
         type="text"
         value={query}
@@ -17,9 +15,7 @@ const Searchbox = ({ className = '', query, onChange }) => {
         placeholder="Search..."
       />
       {query && (
-        <div className="searchbox-clear-icon" onClick={() => onChange('')}>
-          <MdOutlineClear />
-        </div>
+        <GrClose className='searchbox-clear-icon' onClick={() => onChange('')} />
       )}
     </form>
   )
