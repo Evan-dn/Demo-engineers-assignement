@@ -26,6 +26,6 @@
 .custom-button:disabled,
 .custom-button[disabled]{
   pointer-events: none;
-  cursor: auto;
+  opacity: 0.6; 
+  filter: grayscale(80%);
 }
-

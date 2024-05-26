@@ -30,6 +30,7 @@ const CustomRefinementList = ({ attribute }) => {
     searchForItems(newQuery)
   }
 
+  const hasItems = items.length > 0
   return (
     <div className='refinement-list-container'>
 
@@ -37,7 +38,7 @@ const CustomRefinementList = ({ attribute }) => {
       
       <Searchbox className='refinement-list-container-search-box' query={query} onChange={handleChange} />
       <ul>
-        {items.length === 0 && <NoResult/>}
+        {!hasItems && <NoResult/>}
         {items.map((item) => (
           <li className='refinement-list-li-container' key={item.label}>
             <label>
@@ -53,7 +54,7 @@ const CustomRefinementList = ({ attribute }) => {
           </li>
         ))}
       </ul>
-      <Button onClick={toggleShowMore}>
+      <Button disabled={!hasItems} onClick={toggleShowMore}>
         {isShowingMore ? 'Show less' : 'Show more'}
       </Button>
     </div>
